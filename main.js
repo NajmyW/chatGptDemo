@@ -25,7 +25,7 @@ if (cek[i].trim().length > 0){
 res.push(JSON.parse(cek[i].trim()))
 }}
 
-return res.map((a) => a.choices[0].delta.content).join("")
+return res.map((a) => a.choices[0].delta.content).join("").replace(/<[^>]*>/g, '');
 
 } catch (error) {
 console.error("Error parsing JSON:",error)
